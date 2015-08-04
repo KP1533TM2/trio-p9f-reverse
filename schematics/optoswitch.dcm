@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP OPTOSWITCH
+D Generic opto-switch
+K NPN DC opto switch
+$ENDCMP
+#
+#End Doc Library
