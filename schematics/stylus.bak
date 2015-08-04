@@ -36,7 +36,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 3
+Sheet 3 3
 Title ""
 Date ""
 Rev ""
@@ -112,10 +112,10 @@ F 3 "" H 8300 4850 30  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L OPTOSWITCH TRACK
+L OPTOSWITCH TrackDetect
 U 1 1 55B91147
 P 9650 4150
-F 0 "TRACK" H 9350 4350 50  0000 L CNN
+F 0 "TrackDetect" H 9650 4350 50  0000 C CNN
 F 1 "OPTOSWITCH" H 9650 4350 50  0001 L CNN
 F 2 "" H 10100 3250 50  0001 L CIN
 F 3 "" H 9650 4150 50  0000 L CNN
@@ -147,10 +147,10 @@ F 3 "" H 7800 4500 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R STYLUS
+L R HeadLoadSolenoid
 U 1 1 55B91E41
 P 7350 3600
-F 0 "STYLUS" V 7250 3700 50  0000 C CNN
+F 0 "HeadLoadSolenoid" V 7250 3600 50  0000 C CNN
 F 1 "-" V 7450 3600 50  0001 C CNN
 F 2 "" V 7280 3600 30  0000 C CNN
 F 3 "" H 7350 3600 30  0000 C CNN
@@ -171,10 +171,10 @@ $EndComp
 Text Label 9200 3850 2    60   ~ 0
 GRAY
 $Comp
-L OPTOSWITCH TRACKING
+L OPTOSWITCH StylusTracking
 U 1 1 55B92607
 P 8150 4150
-F 0 "TRACKING" H 7950 4350 50  0000 L CNN
+F 0 "StylusTracking" H 8150 4350 50  0000 C CNN
 F 1 "OPTOSWITCH" H 8150 4350 50  0001 L CNN
 F 2 "" H 8600 3250 50  0001 L CIN
 F 3 "" H 8150 4150 50  0000 L CNN
@@ -239,10 +239,10 @@ CONN_YELLOW
 Text Label 5200 4500 2    60   ~ 0
 CONN_GREEN
 $Comp
-L OPTOSWITCH ENCODER
+L OPTOSWITCH CarriageEncoder
 U 1 1 55B942CC
 P 3600 5300
-F 0 "ENCODER" H 3450 5500 50  0000 L CNN
+F 0 "CarriageEncoder" H 3600 5500 50  0000 C CNN
 F 1 "OPTOSWITCH" H 3600 5500 50  0001 L CNN
 F 2 "" H 4050 4400 50  0001 L CIN
 F 3 "" H 3600 5300 50  0000 L CNN
@@ -373,10 +373,10 @@ $EndComp
 Text Notes 2750 5850 0    60   ~ 0
 MOTOR PCB
 $Comp
-L R CARRIAGE
+L R CarriageMotor
 U 1 1 55B99A30
 P 3700 6250
-F 0 "CARRIAGE" H 4100 6250 50  0000 C CNN
+F 0 "CarriageMotor" H 4100 6250 50  0000 C CNN
 F 1 "R" V 3700 6250 50  0000 C CNN
 F 2 "" V 3630 6250 30  0000 C CNN
 F 3 "" H 3700 6250 30  0000 C CNN
@@ -407,6 +407,14 @@ F 3 "" H 3100 6050 60  0000 C CNN
 $EndComp
 Text Notes 2800 6900 0    60   ~ 0
 Motor info:\nSankyo\nVA610B07\n40302-A
+Text Label 10100 4250 0    60   ~ 0
+YELLOW
+Text HLabel 10150 5450 2    60   Input ~ 0
+MuteSwitch
+Text HLabel 10150 5350 2    60   Output ~ 0
+CarriageStopper
+Text HLabel 10150 5250 2    60   Output ~ 0
+TrackDetect
 Wire Wire Line
 	9800 3000 9800 2950
 Wire Wire Line
@@ -432,15 +440,9 @@ Wire Notes Line
 Wire Wire Line
 	9950 4050 10000 4050
 Wire Wire Line
-	10000 3850 10000 4050
+	10000 4050 10000 3850
 Wire Wire Line
-	7500 3850 7800 3850
-Wire Wire Line
-	7800 3850 8500 3850
-Wire Wire Line
-	8500 3850 9300 3850
-Wire Wire Line
-	9300 3850 10000 3850
+	10000 3850 7500 3850
 Wire Wire Line
 	9300 3850 9300 4050
 Wire Wire Line
@@ -450,18 +452,14 @@ Wire Wire Line
 Wire Wire Line
 	8100 4650 8100 4500
 Wire Wire Line
-	8050 4500 8100 4500
-Wire Wire Line
-	8100 4500 8150 4500
+	8050 4500 8150 4500
 Connection ~ 8100 4500
 Wire Wire Line
 	8150 4850 7500 4850
 Wire Wire Line
 	7500 4850 7500 4500
 Wire Wire Line
-	6200 4500 7500 4500
-Wire Wire Line
-	7500 4500 7550 4500
+	6200 4500 7550 4500
 Wire Wire Line
 	8900 1650 8900 2950
 Wire Wire Line
@@ -539,21 +537,11 @@ Wire Notes Line
 Wire Wire Line
 	2150 4100 5250 4100
 Wire Wire Line
-	2150 4200 4100 4200
+	2150 4200 5250 4200
 Wire Wire Line
-	4100 4200 5250 4200
+	2150 4300 5250 4300
 Wire Wire Line
-	2150 4300 4500 4300
-Wire Wire Line
-	4500 4300 5250 4300
-Wire Wire Line
-	2150 4400 3200 4400
-Wire Wire Line
-	3200 4400 3400 4400
-Wire Wire Line
-	3400 4400 3900 4400
-Wire Wire Line
-	3900 4400 5250 4400
+	2150 4400 5250 4400
 Wire Wire Line
 	2150 4500 5250 4500
 Wire Wire Line
@@ -585,30 +573,20 @@ Wire Wire Line
 Wire Wire Line
 	3900 5400 4000 5400
 Wire Wire Line
-	4000 5500 4000 5400
+	4000 5400 4000 5500
 Wire Wire Line
-	2550 5500 3200 5500
-Wire Wire Line
-	3200 5500 4000 5500
+	4000 5500 2550 5500
 Wire Wire Line
 	3200 5500 3200 5400
 Wire Wire Line
 	3200 5400 3300 5400
 Wire Wire Line
-	2800 5200 3200 5200
-Wire Wire Line
-	3200 5200 3300 5200
+	2800 5200 3300 5200
 Wire Wire Line
 	3200 5200 3200 4850
-Wire Wire Line
-	2800 5200 2800 3650
-Wire Wire Line
-	2800 3650 2150 3650
 Connection ~ 3200 5500
 Wire Wire Line
-	4100 2900 4200 2900
-Wire Wire Line
-	4200 2900 4450 2900
+	4100 2900 4450 2900
 Wire Wire Line
 	4400 3000 4400 3300
 Wire Wire Line
@@ -616,9 +594,7 @@ Wire Wire Line
 Wire Wire Line
 	4400 3300 4200 3300
 Wire Wire Line
-	4200 3250 4200 3300
-Wire Wire Line
-	4200 3300 4200 3350
+	4200 3250 4200 3350
 Connection ~ 4200 3300
 Wire Wire Line
 	4200 2900 4200 2950
@@ -627,13 +603,9 @@ Wire Wire Line
 	3750 2900 3800 2900
 Connection ~ 3200 5200
 Wire Wire Line
-	2550 4000 2550 5500
+	2550 4000 2550 6450
 Wire Wire Line
-	2550 5500 2550 6450
-Wire Wire Line
-	2150 4000 2550 4000
-Wire Wire Line
-	2550 4000 4200 4000
+	2150 4000 4200 4000
 Wire Wire Line
 	4200 4000 4200 3750
 Connection ~ 2550 4000
@@ -642,27 +614,16 @@ Wire Wire Line
 Wire Wire Line
 	3200 4400 3200 4550
 Wire Wire Line
-	3350 2900 3400 2900
-Wire Wire Line
-	3400 2900 3450 2900
-Wire Wire Line
-	3400 2900 3400 4400
-Connection ~ 3400 4400
+	3350 2900 3450 2900
 Connection ~ 3400 2900
-Wire Wire Line
-	2150 3450 2300 3450
 Wire Wire Line
 	2300 3450 2300 2900
 Wire Wire Line
 	2300 2900 2350 2900
 Wire Wire Line
-	3750 1750 5500 1750
+	3750 1750 8800 1750
 Wire Wire Line
-	5500 1750 8800 1750
-Wire Wire Line
-	4050 1650 4350 1650
-Wire Wire Line
-	4350 1650 8900 1650
+	4050 1650 8900 1650
 Wire Wire Line
 	4450 2400 4350 2400
 Wire Wire Line
@@ -670,9 +631,7 @@ Wire Wire Line
 Wire Wire Line
 	10450 1550 10450 2950
 Wire Wire Line
-	4150 1550 4250 1550
-Wire Wire Line
-	4250 1550 10450 1550
+	4150 1550 10450 1550
 Wire Wire Line
 	4250 1550 4250 2700
 Wire Wire Line
@@ -684,11 +643,9 @@ Wire Wire Line
 Wire Wire Line
 	10450 2950 9800 2950
 Wire Wire Line
-	10550 1450 10550 3650
+	10550 3650 10550 1450
 Wire Wire Line
-	4250 1450 5400 1450
-Wire Wire Line
-	5400 1450 10550 1450
+	10550 1450 4250 1450
 Wire Wire Line
 	5400 1450 5400 2800
 Wire Wire Line
@@ -714,8 +671,6 @@ Wire Wire Line
 	4250 900  4250 1450
 Connection ~ 5400 1450
 Wire Wire Line
-	2150 3350 2200 3350
-Wire Wire Line
 	2200 3350 2200 2300
 Wire Notes Line
 	2750 6950 2750 5850
@@ -726,9 +681,7 @@ Wire Notes Line
 Wire Notes Line
 	4450 6950 2750 6950
 Wire Wire Line
-	3400 6050 3450 6050
-Wire Wire Line
-	3450 6050 3700 6050
+	3400 6050 3700 6050
 Wire Wire Line
 	3700 6050 3700 6100
 Wire Wire Line
@@ -737,9 +690,7 @@ Connection ~ 3450 6050
 Wire Wire Line
 	3700 6450 3700 6400
 Wire Wire Line
-	2550 6450 3450 6450
-Wire Wire Line
-	3450 6450 3700 6450
+	2550 6450 3700 6450
 Wire Wire Line
 	3450 6400 3450 6450
 Connection ~ 3450 6450
@@ -747,8 +698,6 @@ Wire Wire Line
 	2800 6050 2450 6050
 Wire Wire Line
 	2450 6050 2450 3900
-Wire Wire Line
-	2450 3900 2150 3900
 Connection ~ 2550 5500
 Wire Notes Line
 	3900 5300 4550 5300
@@ -756,16 +705,101 @@ Wire Notes Line
 	4550 5300 4550 6150
 Wire Notes Line
 	4550 6150 3800 6150
-Text Label 10100 4250 0    60   ~ 0
-YELLOW
 Wire Wire Line
 	2200 2300 3000 2300
 Wire Wire Line
 	9950 4250 10650 4250
 Wire Wire Line
-	10650 800  10650 4250
+	10650 4250 10650 800 
 Wire Wire Line
 	3000 2300 3000 800 
 Wire Wire Line
 	3000 800  10650 800 
+Text HLabel 10150 5550 2    60   Output ~ 0
+CarriageEncoder
+Wire Wire Line
+	3800 4400 3800 3150
+Wire Wire Line
+	3800 3150 3400 3150
+Wire Wire Line
+	3400 3150 3400 2900
+Connection ~ 3800 4400
+Wire Wire Line
+	2800 3650 2800 5200
+Wire Wire Line
+	2150 3650 2800 3650
+Text HLabel 10150 5750 2    60   Input ~ 0
+MotorPower
+Wire Wire Line
+	2200 3350 2150 3350
+Wire Wire Line
+	2150 3450 2300 3450
+Wire Wire Line
+	2450 3900 2150 3900
+Wire Wire Line
+	10150 5250 9400 5250
+Wire Wire Line
+	10150 5350 9400 5350
+Wire Wire Line
+	10150 5450 9400 5450
+Wire Wire Line
+	10150 5550 9400 5550
+Text HLabel 10150 5850 2    60   UnSpc ~ 0
+TopCoverGround
+Text HLabel 10150 5950 2    60   Output ~ 0
+Tracking
+Text HLabel 10150 6050 2    60   Input ~ 0
+HeadLoadPower
+Text HLabel 10150 6250 2    60   Input ~ 0
+SensorPower
+Text HLabel 10150 6150 2    60   Input ~ 0
+HeadLoad
+Text HLabel 10150 6350 2    60   UnSpc ~ 0
+StylusHeadGround
+Wire Wire Line
+	10150 5750 9400 5750
+Wire Wire Line
+	10150 5850 9400 5850
+Wire Wire Line
+	10150 5950 9400 5950
+Wire Wire Line
+	10150 6050 9400 6050
+Wire Wire Line
+	10150 6150 9400 6150
+Wire Wire Line
+	10150 6250 9400 6250
+Wire Wire Line
+	10150 6350 9400 6350
+Text Label 10100 5950 2    60   ~ 0
+CONN_BROWN
+Text Label 10100 6050 2    60   ~ 0
+CONN_RED
+Text Label 10100 6150 2    60   ~ 0
+CONN_ORANGE
+Text Label 10100 6250 2    60   ~ 0
+CONN_YELLOW
+Text Label 10100 6350 2    60   ~ 0
+CONN_GREEN
+Text Label 2200 4000 0    60   ~ 0
+GND1
+Text Label 10100 5850 2    60   ~ 0
+GND1
+Text Label 10100 5750 2    60   ~ 0
+MOTOR
+Text Label 2200 3900 0    60   ~ 0
+MOTOR
+Text Label 10050 5250 2    60   ~ 0
+YELLOW
+Text Label 2200 3450 0    60   ~ 0
+ENDSTOP
+Text Label 2200 3550 0    60   ~ 0
+MUTE
+Text Label 10050 5450 2    60   ~ 0
+MUTE
+Text Label 10050 5350 2    60   ~ 0
+ENDSTOP
+Text Label 2200 3650 0    60   ~ 0
+ENCODER
+Text Label 10050 5550 2    60   ~ 0
+ENCODER
 $EndSCHEMATC
