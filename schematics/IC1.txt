@@ -1,14 +1,17 @@
+                          
+                          NEC D553C 275
+                          
                           +------------+
                        ---| 1  \--/ 42 |---
          ENGAGE STYLUS ---| 2       41 |---
              MOTOR REV ---| 3       40 |---
              MOTOR FWD ---| 4       39 |---
-                       ---| 5       38 |---
+  /ENABLE TRACK DETECT ---|?5       38 |---
                        ---| 6       37 |---
                        ---| 7       36 |---
       ENGAGE TURNTABLE ---| 8       35 |---
-                  MUTE ---| 9       34 |---
-                       ---| 10      33 |---
+                  MUTE ---| 9       34 |--- CARRIAGE ENCODER PULSE
+                       ---| 10      33?|--- TRACK DETECTION PULSE
                        ---| 11      32 |---
                        ---| 12      31 |---
                        ---| 13      30 |---
